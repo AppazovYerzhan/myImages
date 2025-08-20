@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>С Днём Рождения, Аружан ❤️</title>
+
+  <!-- Шрифты: рукописный для заголовка и аккуратный для текста -->
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+
+
+  <style>
+    :root {
+      --bg: url('https://github.com/AppazovYerzhan/myImages/blob/main/back.jpg?raw=true');
+      --overlay: rgba(0, 0, 0, .45);
+      --card-bg: rgba(0, 0, 0, .35);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      color: #fff;
+      background: linear-gradient(var(--overlay), var(--overlay)), var(--bg) center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      overflow-x: hidden;
+    }
+
+    .blessing {
+      margin: 24px auto 0;
+      width: min(920px, 92vw);
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+      padding: clamp(16px, 4vw, 32px);
+      text-align: center;
+    }
+
+    .blessing h1 {
+      font-family: 'Marck Script', cursive;
+      font-weight: 400;
+      font-size: clamp(36px, 8vw, 64px);
+      line-height: 1.1;
+      margin: 4px 0 12px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, .35);
+    }
+
+    .blessing .subtitle {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 600;
+      font-size: clamp(14px, 2.6vw, 16px);
+      letter-spacing: .02em;
+      opacity: .9;
+      margin-bottom: 12px;
+    }
+
+    .blessing p {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: clamp(15px, 3.5vw, 18px);
+      line-height: 1.6;
+      margin: .6em 0;
+      text-wrap: pretty;
+    }
+
+    .blessing .note {
+      opacity: .9;
+      font-style: italic;
+    }
+
+    /* Слайдер */
+    .slider-wrap {
+      margin: 0 auto 32px;
+      width: min(980px, 96vw);
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--radius);
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .slider img {
+      width: 100%;
+      flex-shrink: 0;
+      display: block;
+      aspect-ratio: 16/10;
+      /* аккуратная высота на мобилках */
+      object-fit: cover;
+    }
+
+    .buttons {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 6px;
+      pointer-events: none;
+    }
+
+    .buttons button {
+      pointer-events: all;
+      background: rgba(0, 0, 0, .5);
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 50%;
+      transition: transform .15s ease, background .2s ease;
+    }
+
+    .buttons button:active {
+      transform: scale(.95);
+    }
+
+    .dots {
+      position: absolute;
+      left: 50%;
+      bottom: 8px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      padding: 6px 10px;
+      background: rgba(0, 0, 0, .35);
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .55);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .dot.active {
+      background: #fff;
+      transform: scale(1.15);
+    }
+
+ .carousel-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* black tint */
+  pointer-events: none; /* clicks pass through */
+}
+
+    footer {
+      text-align: center;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      opacity: .85;
+      padding: 0 0 18px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="blessing" aria-label="Поздравление">
+    <div class="subtitle">25 августа - твой день</div>
+    <h1>Aружан, с днём рождения! 🎉</h1>
+
+    <p>Тебе 22 - и это классно, потому что всё только начинается. Я знаю, как ты вымоталась в EY и как мечтала переехать
+      в Алмату. Теперь у тебя новая работа в Aster, новый город и новый этап - я очень тобой горжусь.</p>
+
+    <p>Хочу, чтобы в твоей жизни было больше отдыха и простых радостей: бассейн, тёплый воздух, любимый курт и лимонад -
+      и поменьше спешки и стресса. Ты это заслуживаешь.</p>
+
+    <p>Мы отметим чуть раньше - с 23 на 24 августа, в Alma Resort: бассейн, SPA и полное перезагрузочное настроение.
+      Пусть именно так начнутся твои 22 - спокойно, счастливо и с улыбкой.</p>
+
+    <p class="note">С днём рождения, Аружан. Пусть впереди будет ещё больше поводов радоваться жизни. 💛</p>
+  </section>
+
+  <!-- Слайдер -->
+  <section class="slider-wrap" aria-label="Фотоальбом">
+    <div class="slider-container">
+      <div class="slider" id="slider">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/7.jpg?raw=true" alt="Фото 7">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/45.jpg?raw=true" alt="Фото 45">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/29.jpg?raw=true" alt="Фото 29">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/8.jpg?raw=true" alt="Фото 8">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/22.jpg?raw=true" alt="Фото 22">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/5.jpg?raw=true" alt="Фото 5">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/34.jpg?raw=true" alt="Фото 34">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/13.jpg?raw=true" alt="Фото 13">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/40.jpg?raw=true" alt="Фото 40">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/1.jpg?raw=true" alt="Фото 1">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/28.jpg?raw=true" alt="Фото 28">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/19.jpg?raw=true" alt="Фото 19">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/31.jpg?raw=true" alt="Фото 31">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/9.jpg?raw=true" alt="Фото 9">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/25.jpg?raw=true" alt="Фото 25">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/36.jpg?raw=true" alt="Фото 36">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/14.jpg?raw=true" alt="Фото 14">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/41.jpg?raw=true" alt="Фото 41">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/11.jpg?raw=true" alt="Фото 11">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/21.jpg?raw=true" alt="Фото 21">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/38.jpg?raw=true" alt="Фото 38">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/2.jpg?raw=true" alt="Фото 2">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/26.jpg?raw=true" alt="Фото 26">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/4.jpg?raw=true" alt="Фото 4">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/35.jpg?raw=true" alt="Фото 35">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/15.jpg?raw=true" alt="Фото 15">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/50.jpg?raw=true" alt="Фото 50">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/20.jpg?raw=true" alt="Фото 20">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/24.jpg?raw=true" alt="Фото 24">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/39.jpg?raw=true" alt="Фото 39">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/18.jpg?raw=true" alt="Фото 18">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/27.jpg?raw=true" alt="Фото 27">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/52.jpg?raw=true" alt="Фото 52">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/10.jpg?raw=true" alt="Фото 10">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/32.jpg?raw=true" alt="Фото 32">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/17.jpg?raw=true" alt="Фото 17">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/44.jpg?raw=true" alt="Фото 44">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/33.jpg?raw=true" alt="Фото 33">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/42.jpg?raw=true" alt="Фото 42">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/47.jpg?raw=true" alt="Фото 47">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/23.jpg?raw=true" alt="Фото 23">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/37.jpg?raw=true" alt="Фото 37">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/12.jpg?raw=true" alt="Фото 12">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/30.jpg?raw=true" alt="Фото 30">
+        <img src="https://github.com/AppazovYerzhan/myImages/blob/main/48.png?raw=true" alt="Фото 48">
+      </div>
+
+      <div class="buttons" aria-hidden="true">
+        <button type="button" aria-label="Предыдущее фото" onclick="prevSlide()">❮</button>
+        <button type="button" aria-label="Следующее фото" onclick="nextSlide()">❯</button>
+      </div>
+
+      <div class="dots" id="dots" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <footer>Made with ❤️ by 🪿</footer>
+
+  <script>
+    // Слайдер с поддержкой свайпов + точки
+    const slider = document.getElementById('slider');
+    const slides = Array.from(slider.children);
+    const dotsWrap = document.getElementById('dots');
+    let index = 0;
+
+    function renderDots() {
+      dotsWrap.innerHTML = '';
+      slides.forEach((_, i) => {
+        const d = document.createElement('div');
+        d.className = 'dot' + (i === index ? ' active' : '');
+        d.onclick = () => showSlide(i);
+        dotsWrap.appendChild(d);
+      });
+    }
+
+    function showSlide(i) {
+      index = (i + slides.length) % slides.length;
+      slider.style.transform = `translateX(-${index * 100}%)`;
+      // обновить точки
+      Array.from(dotsWrap.children).forEach((el, n) => {
+        el.classList.toggle('active', n === index);
+      });
+    }
+    function nextSlide() { showSlide(index + 1); }
+    function prevSlide() { showSlide(index - 1); }
+
+    let startX = 0;
+    slider.addEventListener('touchstart', e => startX = e.touches[0].clientX, { passive: true });
+    slider.addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      if (endX - startX > 50) prevSlide();
+      if (startX - endX > 50) nextSlide();
+    });
+
+    // Автопрокрутка (можно отключить закомментировав таймер)
+    let timer = setInterval(nextSlide, 4500);
+    // Пауза при взаимодействии
+    ['touchstart', 'mousedown', 'keydown', 'click'].forEach(ev => {
+      document.addEventListener(ev, () => { clearInterval(timer); }, { once: true, passive: true });
+    });
+
+    renderDots();
+    showSlide(0);
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const imgs = document.querySelectorAll("#slider img");
+      imgs.forEach(img => {
+        const src = img.getAttribute("data-src");
+        if (src) {
+          img.src = src;
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
